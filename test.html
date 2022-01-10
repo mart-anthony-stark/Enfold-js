@@ -16,11 +16,20 @@
         section {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background: rgb(65, 155, 140);
             color: aliceblue;
             text-align: center;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .box {
@@ -35,6 +44,10 @@
 
 <body>
     <section>
+        <h1>Enfold Js</h1>
+        <h2>OnScroll Reveal Animation Library</h2>
+    </section>
+    <section>
         <enfold-animate name="fadeIn">
             <div class="box">
                 <h1>Section 1</h1>
@@ -45,12 +58,32 @@
 
 
     <section>
-        <enfold-animate name="slideUp" duration="5" easing="linear">
-            <div class="box">
-                <h1>Section 2</h1>
-                <h2>Slide Up</h2>
-            </div>
-        </enfold-animate>
+        <div class="container">
+            <enfold-animate name="slideRight" duration="1" easing="linear">
+                <div class="box">
+                    <h1>Section 2</h1>
+                    <h2>Slide Right</h2>
+                </div>
+            </enfold-animate>
+            <enfold-animate name="slideUp" duration="1" easing="linear" intensity="100">
+                <div class="box">
+                    <h1>Section 2</h1>
+                    <h2>Slide Up</h2>
+                </div>
+            </enfold-animate>
+            <enfold-animate name="slideDown" duration="1" easing="linear">
+                <div class="box">
+                    <h1>Section 2</h1>
+                    <h2>Slide Down</h2>
+                </div>
+            </enfold-animate>
+            <enfold-animate name="slideLeft" duration="1" easing="linear">
+                <div class="box">
+                    <h1>Section 2</h1>
+                    <h2>Slide Left</h2>
+                </div>
+            </enfold-animate>
+        </div>
     </section>
 
 
