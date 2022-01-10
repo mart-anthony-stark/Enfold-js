@@ -19,18 +19,24 @@ var __extends = (this && this.__extends) || (function () {
         function EnfoldAnimate() {
             var _this = _super.call(this) || this;
             var animationType = _this.getAttribute("name");
-            var animationDelay = parseInt(_this.getAttribute("delay"));
-            var animationDuration = parseInt(_this.getAttribute("duration"));
-            var easing = _this.getAttribute("easing");
+            var animationDelay = parseInt(_this.getAttribute("delay")) | 0;
+            var animationDuration = parseInt(_this.getAttribute("duration")) | 1;
+            var easing = _this.getAttribute("easing")
+                ? _this.getAttribute("easing")
+                : "ease";
+            var intensity = parseInt(_this.getAttribute("intensity")) | 30;
+            var once = _this.hasAttribute("once");
             var template = document.createElement("template");
-            template.innerHTML = "\n        <style>\n        #enfold{\n            animation-duration: ".concat(animationDuration | 1, "s !important;\n            animation-timing-function: ").concat(easing ? easing : "ease", " !important;\n            animation-delay: ").concat(animationDelay | 0, "s !important;\n        }\n        .fadeIn {\n            animation-name: fadeIn !important;\n        }\n        .slideUp {\n            animation-name: slideUp !important;\n        }\n\n        @keyframes fadeIn {\n            0% {\n                opacity: 0;\n            }\n            100% {\n                opacity: 1;\n            }\n        }\n        @keyframes slideUp {\n            0% {\n                opacity: 0;\n                transform: translateY(30px);\n            }\n            100% {\n                opacity: 1;\n                transform: translateY(0px);\n            }\n        }\n        </style>\n        <div id=\"enfold\">\n            <slot>\n        </div>\n    ");
+            template.innerHTML = "\n        <style>\n        #enfold{\n            animation-duration: ".concat(animationDuration, "s !important;\n            animation-timing-function: ").concat(easing, " !important;\n            animation-delay: ").concat(animationDelay, "s !important;\n        }\n        .fadeIn {\n            animation-name: fadeIn !important;\n        }\n        .slideUp {\n            animation-name: slideUp !important;\n        }\n        .slideLeft {\n            animation-name: slideLeft !important;\n        }\n        .slideDown {\n            animation-name: slideDown !important;\n        }\n        .slideRight {\n            animation-name: slideRight !important;\n        }\n\n        @keyframes fadeIn {\n            0% {\n                opacity: 0;\n            }\n            100% {\n                opacity: 1;\n            }\n        }\n        @keyframes slideUp {\n            0% {\n                transform: translateY(").concat(intensity, "px);\n            }\n            100% {\n                transform: translateY(0px);\n            }\n        }\n        @keyframes slideLeft {\n            0% {\n                transform: translateX(").concat(intensity, "px);\n            }\n            100% {\n                transform: translateX(0px);\n            }\n        }\n        @keyframes slideRight {\n            0% {\n                transform: translateX(-").concat(intensity, "px);\n            }\n            100% {\n                transform: translateX(0px);\n            }\n        }\n        @keyframes slideDown {\n            0% {\n                transform: translateY(-").concat(intensity, "px);\n            }\n            100% {\n                transform: translateY(0px);\n            }\n        }\n        </style>\n        <div id=\"enfold\">\n            <slot>\n        </div>\n    ");
             _this.attachShadow({ mode: "open" });
             _this.shadowRoot.appendChild(template.content.cloneNode(true));
             var root = _this.shadowRoot.querySelector("#enfold");
-            console.log(root);
             var observer = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
                     entry.target.classList.toggle(animationType, entry.isIntersecting);
+                    if (once) {
+                        observer.unobserve(entry.target);
+                    }
                 }, { threshold: 0.5 });
             });
             observer.observe(root);
