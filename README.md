@@ -9,3 +9,12 @@
   <div>...</div>
 </enfold-animate>
 ```
+
+## Attributes
+
+- name
+- delay
+- duration
+- easing
+- intensity
+- once
