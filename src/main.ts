@@ -2,24 +2,38 @@
   class EnfoldAnimate extends HTMLElement {
     constructor() {
       super();
-      const animationType: string = this.getAttribute("name");
-      const animationDelay: number = parseInt(this.getAttribute("delay"));
-      const animationDuration: number = parseInt(this.getAttribute("duration"));
-      const easing: string = this.getAttribute("easing");
+      const animationType = this.getAttribute("name");
+      const animationDelay: number = parseInt(this.getAttribute("delay")) | 0;
+      const animationDuration: number =
+        parseInt(this.getAttribute("duration")) | 1;
+      const easing: string | number = this.getAttribute("easing")
+        ? this.getAttribute("easing")
+        : "ease";
+      const intensity: number = parseInt(this.getAttribute("intensity")) | 30;
+      const once: boolean = this.hasAttribute("once");
 
       const template = document.createElement("template");
       template.innerHTML = `
         <style>
         #enfold{
-            animation-duration: ${animationDuration | 1}s !important;
-            animation-timing-function: ${easing ? easing : "ease"} !important;
-            animation-delay: ${animationDelay | 0}s !important;
+            animation-duration: ${animationDuration}s !important;
+            animation-timing-function: ${easing} !important;
+            animation-delay: ${animationDelay}s !important;
         }
         .fadeIn {
             animation-name: fadeIn !important;
         }
         .slideUp {
             animation-name: slideUp !important;
+        }
+        .slideLeft {
+            animation-name: slideLeft !important;
+        }
+        .slideDown {
+            animation-name: slideDown !important;
+        }
+        .slideRight {
+            animation-name: slideRight !important;
         }
 
         @keyframes fadeIn {
@@ -32,11 +46,33 @@
         }
         @keyframes slideUp {
             0% {
-                opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(${intensity}px);
             }
             100% {
-                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(${intensity}px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-${intensity}px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-${intensity}px);
+            }
+            100% {
                 transform: translateY(0px);
             }
         }
@@ -50,12 +86,14 @@
       this.shadowRoot.appendChild(template.content.cloneNode(true));
 
       const root = this.shadowRoot.querySelector("#enfold");
-      console.log(root);
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(
           (entry) => {
             entry.target.classList.toggle(animationType, entry.isIntersecting);
+            if (once) {
+              observer.unobserve(entry.target);
+            }
           },
           { threshold: 0.5 }
         );
