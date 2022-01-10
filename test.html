@@ -19,21 +19,25 @@
             justify-content: center;
             align-items: center;
             background: rgb(65, 155, 140);
+            color: aliceblue;
+            text-align: center;
         }
-
-        
     </style>
 </head>
 
 <body>
     <section>
-        <h1>Section 1</h1>
+        <enfold-animate animation="fadeIn">
+            <h1>Section 1</h1>
+            <h2>Fade In</h2>
+        </enfold-animate>
     </section>
 
 
     <section>
-        <enfold-animate animation="slideUp">
+        <enfold-animate animation="slideUp" duration="5" easing="linear">
             <h1>Section 2</h1>
+            <h2>Slide Up</h2>
         </enfold-animate>
     </section>
 
