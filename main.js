@@ -1,37 +1,51 @@
 (function Enfold() {
-  const template = document.createElement("template");
-  template.innerHTML = `
-    <style>
-    .fadeIn {
-        opacity: 1 !important;
-        transition: 1s ease;
-    }
-    .slideUp {
-        opacity: 1 !important;
-        transition: 1s ease !important;
-        animation: slideUp 1s ease 1 !important;
-    }
-
-    @keyframes slideUp {
-        0% {
-            transform: translateY(30px);
-        }
-
-        100% {
-            transform: translateY(0px);
-        }
-    }
-    </style>
-    <div id="enfold">
-        <slot>
-    </div>
-`;
-
   class EnfoldAnimate extends HTMLElement {
     constructor() {
       super();
       const animationType = this.getAttribute("animation");
-      console.log(animationType);
+      const animationDelay = this.getAttribute("delay");
+      const animationDuration = this.getAttribute("duration");
+      const easing = this.getAttribute("easing");
+
+      const template = document.createElement("template");
+      template.innerHTML = `
+        <style>
+        #enfold{
+            animation-duration: ${animationDuration | 1}s !important;
+            animation-timing-function: ${easing | "ease"} !important;
+            animation-delay: ${animationDelay | 0}s !important;
+        }
+        .fadeIn {
+            animation-name: fadeIn !important;
+        }
+        .slideUp {
+            animation-name: slideUp !important;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        </style>
+        <div id="enfold">
+            <slot>
+        </div>
+    `;
+
       this.attachShadow({ mode: "open" });
       this.shadowRoot.appendChild(template.content.cloneNode(true));
 
@@ -42,7 +56,6 @@
         entries.forEach(
           (entry) => {
             entry.target.classList.toggle(animationType, entry.isIntersecting);
-            console.log(entry.isIntersecting);
           },
           { threshold: 0.5 }
         );
