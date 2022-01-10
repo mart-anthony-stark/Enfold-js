@@ -1,0 +1,12 @@
+{
+  "name": "enfold",
+  "version": "1.0.0",
+  "description": "A simple oscroll reveal animation library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc src/main --outFile build/bundle.js --watch --sourceMap"
+  },
+  "author": "mart-anthony-stark",
+  "license": "ISC"
+}
