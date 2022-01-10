@@ -2,7 +2,7 @@
   class EnfoldAnimate extends HTMLElement {
     constructor() {
       super();
-      const animationType = this.getAttribute("animation");
+      const animationType = this.getAttribute("name");
       const animationDelay = this.getAttribute("delay");
       const animationDuration = this.getAttribute("duration");
       const easing = this.getAttribute("easing");
