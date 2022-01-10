@@ -18,7 +18,7 @@ var __extends = (this && this.__extends) || (function () {
         __extends(EnfoldAnimate, _super);
         function EnfoldAnimate() {
             var _this = _super.call(this) || this;
-            var animationType = _this.getAttribute("animation");
+            var animationType = _this.getAttribute("name");
             var animationDelay = parseInt(_this.getAttribute("delay"));
             var animationDuration = parseInt(_this.getAttribute("duration"));
             var easing = _this.getAttribute("easing");
