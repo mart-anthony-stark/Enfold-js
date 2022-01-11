@@ -62,6 +62,7 @@ section {
   background: rgb(65, 155, 140);
   color: aliceblue;
   text-align: center;
+  overflow: hidden;
 }
 
 .container {
