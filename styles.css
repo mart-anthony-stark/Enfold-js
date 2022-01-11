@@ -11,6 +11,21 @@ h1 {
   font-size: 40px;
 }
 
+@font-face {
+  font-family: Ribbon;
+  src: url("./src/ribbon.ttf");
+}
+
+@font-face {
+  font-family: Gravity;
+  src: url("./src/KGDefyingGravity.ttf");
+}
+
+.title {
+  font-family: Gravity;
+  font-size: 100px;
+}
+
 a#github {
   background: rgb(32, 32, 32);
   color: aliceblue;
