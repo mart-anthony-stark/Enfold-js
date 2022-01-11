@@ -66,6 +66,10 @@
             -webkit-animation: rotateVertical 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
                     animation: rotateVertical 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
         }
+        .rotateDiagonal {
+            -webkit-animation: rotateDiagonal 0.4s linear both;
+                    animation: rotateDiagonal 0.4s linear both;
+        }
 
         .${animationType}-leave {
             animation-name: ${animationType}-leave !important;
@@ -192,6 +196,27 @@
                       transform: rotateY(360deg);
             }
           }
+          @keyframes rotateDiagonal {
+            0% {
+              -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+                      transform: rotate3d(-1, 1, 0, 0deg);
+              -webkit-transform-origin: 100% 100%;
+                      transform-origin: 100% 100%;
+            }
+            50% {
+              -webkit-transform: rotate3d(-1, 1, 0, -180deg);
+                      transform: rotate3d(-1, 1, 0, -180deg);
+              -webkit-transform-origin: 100% 100%;
+                      transform-origin: 100% 100%;
+            }
+            100% {
+              -webkit-transform: rotate3d(-1, 1, 0, -360deg);
+                      transform: rotate3d(-1, 1, 0, -360deg);
+              -webkit-transform-origin: 100% 100%;
+                      transform-origin: 100% 100%;
+            }
+          }
+          
 
           
           
