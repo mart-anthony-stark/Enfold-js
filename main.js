@@ -27,6 +27,12 @@
         .fadeIn {
             animation-name: fadeIn !important;
         }
+        .fadeLeft {
+            animation-name: fadeLeft !important;
+        }
+        .fadeRight {
+            animation-name: fadeRight !important;
+        }
         .slideUp {
             animation-name: slideUp !important;
         }
@@ -60,13 +66,24 @@
                 opacity: 1;
             }
         }
-
-        @keyframes fadeIn-leave{
+        @keyframes fadeLeft {
             0% {
-                opacity: 1;
+                transform: translateX(${intensity}px);
+                opacity: 0;
             }
             100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeRight {
+            0% {
+                transform: translateX(-${intensity}px);
                 opacity: 0;
+            }
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
             }
         }
 
