@@ -13,7 +13,7 @@
         ? this.getAttribute("easing")
         : "ease";
       const intensity = this.getAttribute("intensity") | 100;
-      const threshold = this.getAttribute("threshold") | 0.5;
+      const threshold = this.getAttribute("threshold") | 0.3;
       const once = this.hasAttribute("once");
 
       const template = document.createElement("template");
@@ -54,6 +54,19 @@
         .zoomInRight {
             animation-name: zoomInRight !important;
         }
+        .rotateCenter {
+            -webkit-animation-name: rotateCenter;
+                    animation-name: rotateCenter;
+        }
+        .rotateBotLeft {
+            -webkit-animation-name: rotateBotLeft;
+                    animation-name: rotateBotLeft;
+        }
+        .rotateVertical {
+            -webkit-animation: rotateVertical 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+                    animation: rotateVertical 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        }
+
         .${animationType}-leave {
             animation-name: ${animationType}-leave !important;
         }
@@ -145,6 +158,43 @@
                 transform: translateX(0px) scale(1);
             }
         }
+        @keyframes rotateCenter {
+            0% {
+                -webkit-transform: rotate(0);
+                        transform: rotate(0);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                        transform: rotate(360deg);
+            }
+        }
+        @keyframes rotateBotLeft {
+        0% {
+            -webkit-transform: rotate(0);
+                    transform: rotate(0);
+            -webkit-transform-origin: bottom left;
+                    transform-origin: bottom left;
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+            -webkit-transform-origin: bottom left;
+                    transform-origin: bottom left;
+        }
+        }
+        @keyframes rotateVertical {
+            0% {
+              -webkit-transform: rotateY(0);
+                      transform: rotateY(0);
+            }
+            100% {
+              -webkit-transform: rotateY(360deg);
+                      transform: rotateY(360deg);
+            }
+          }
+
+          
+          
         </style>
         <div id="enfold">
             <slot>
