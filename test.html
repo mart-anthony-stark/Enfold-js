@@ -12,22 +12,44 @@
 
 <body>
     <section>
-        <h1>Enfold Js</h1>
-        <h2>OnScroll Reveal Animation Library</h2>
-        <div>
-            <a id="github" href="https://github.com/mart-anthony-stark/Enfold-js" target="_blank">
-                <div class="icon"><i class="fa fa-github-square" aria-hidden="true"></i></div>
-                <h3>Github</h3>
-            </a>
-        </div>
-    </section>
-    <section>
-        <enfold-animate name="fadeIn">
-            <div class="box">
-                <h1>Section 1</h1>
-                <h2>Fade In</h2>
+        <enfold-animate name="slideRight">
+            <h1 class="title">Enfold Js</h1>
+        </enfold-animate>
+
+
+        <enfold-animate name="slideLeft" duration="1.5">
+            <h2>OnScroll Reveal Animation Library</h2>
+        </enfold-animate>
+        <enfold-animate name="fadeIn" duration="1">
+            <div>
+                <a id="github" href="https://github.com/mart-anthony-stark/Enfold-js" target="_blank">
+                    <div class="icon"><i class="fa fa-github-square" aria-hidden="true"></i></div>
+                    <h3>Github</h3>
+                </a>
             </div>
         </enfold-animate>
+    </section>
+    <section>
+        <div class="container">
+            <enfold-animate name="fadeRight">
+                <div class="box">
+                    <h1>Section 1</h1>
+                    <h2>Fade Right</h2>
+                </div>
+            </enfold-animate>
+            <enfold-animate name="fadeIn">
+                <div class="box">
+                    <h1>Section 1</h1>
+                    <h2>Fade In</h2>
+                </div>
+            </enfold-animate>
+            <enfold-animate name="fadeLeft">
+                <div class="box">
+                    <h1>Section 1</h1>
+                    <h2>Fade Left</h2>
+                </div>
+            </enfold-animate>
+        </div>
     </section>
 
 
