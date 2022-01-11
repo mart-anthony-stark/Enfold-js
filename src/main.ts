@@ -1,23 +1,22 @@
-(function Enfold() {
-  class EnfoldAnimate extends HTMLElement {
-    constructor() {
-      super();
-      const animationType: string = this.getAttribute("name");
-      const animationDelay: number = this.getAttribute("delay")
-        ? parseInt(this.getAttribute("delay"))
-        : 0;
-      const animationDuration: number = this.getAttribute("duration")
-        ? parseInt(this.getAttribute("duration"))
-        : 1;
-      const easing: string = this.getAttribute("easing")
-        ? this.getAttribute("easing")
-        : "ease";
-      const intensity: number = parseInt(this.getAttribute("intensity")) | 100;
-      const threshold: number = parseInt(this.getAttribute("threshold")) | 0.5;
-      const once: boolean = this.hasAttribute("once");
+class EnfoldAnimate extends HTMLElement {
+  constructor() {
+    super();
+    const animationType: string = this.getAttribute("name");
+    const animationDelay: number = this.getAttribute("delay")
+      ? parseInt(this.getAttribute("delay"))
+      : 0;
+    const animationDuration: number = this.getAttribute("duration")
+      ? parseInt(this.getAttribute("duration"))
+      : 1;
+    const easing: string = this.getAttribute("easing")
+      ? this.getAttribute("easing")
+      : "ease";
+    const intensity: number = parseInt(this.getAttribute("intensity")) | 100;
+    const threshold: number = parseInt(this.getAttribute("threshold")) | 0.5;
+    const once: boolean = this.hasAttribute("once");
 
-      const template = document.createElement("template");
-      template.innerHTML = `
+    const template = document.createElement("template");
+    template.innerHTML = `
           <style>
           <style>
         #enfold{
@@ -153,32 +152,30 @@
           </div>
       `;
 
-      this.attachShadow({ mode: "open" });
-      this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-      const root = this.shadowRoot.querySelector("#enfold");
+    const root = this.shadowRoot.querySelector("#enfold");
 
-      const observer = new IntersectionObserver(callback, {
-        threshold,
+    const observer = new IntersectionObserver(callback, {
+      threshold,
+    });
+
+    observer.observe(root);
+
+    function callback(entries) {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle(animationType, entry.isIntersecting);
+        entry.target.classList.toggle(
+          animationType + "-leave",
+          !entry.isIntersecting
+        );
+
+        if (once) {
+          observer.unobserve(entry.target);
+        }
       });
-
-      observer.observe(root);
-
-      function callback(entries) {
-        entries.forEach((entry) => {
-          entry.target.classList.toggle(animationType, entry.isIntersecting);
-          entry.target.classList.toggle(
-            animationType + "-leave",
-            !entry.isIntersecting
-          );
-
-          if (once) {
-            observer.unobserve(entry.target);
-          }
-        });
-      }
     }
   }
-
-  window.customElements.define("enfold-animate", EnfoldAnimate);
-})();
+}
+window.customElements.define("enfold-animate", EnfoldAnimate);
