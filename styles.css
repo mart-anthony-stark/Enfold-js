@@ -41,8 +41,19 @@ a#github {
 #github .icon {
   font-size: 30px;
 }
-
+#syntax {
+  margin-top: 55px;
+}
+a.back-to-top {
+  position: fixed;
+  z-index: 5;
+  bottom: 25px;
+  right: 25px;
+  color: white;
+  font-size: 50px;
+}
 section {
+  height: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -54,6 +65,8 @@ section {
 }
 
 .container {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 15px;
