@@ -70,6 +70,10 @@
             -webkit-animation: rotateDiagonal 0.4s linear both;
                     animation: rotateDiagonal 0.4s linear both;
         }
+        .flipHorizontalBottom {
+            -webkit-animation: flipHorizontalBottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+                    animation: flipHorizontalBottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        }
 
         .${animationType}-leave {
             animation-name: ${animationType}-leave !important;
@@ -216,6 +220,17 @@
                       transform-origin: 100% 100%;
             }
           }
+          @keyframes flipHorizontalBottom {
+            0% {
+              -webkit-transform: rotateX(0);
+                      transform: rotateX(0);
+            }
+            100% {
+              -webkit-transform: rotateX(-180deg);
+                      transform: rotateX(-180deg);
+            }
+          }
+          
           
 
           
