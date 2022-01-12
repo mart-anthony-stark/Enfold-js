@@ -18,8 +18,7 @@ class EnfoldAnimate extends HTMLElement {
     const template = document.createElement("template");
     template.innerHTML = `
           <style>
-          <style>
-        #enfold{
+          #enfold{
             animation-duration: ${animationDuration}s !important;
             animation-timing-function: ${easing} !important;
             animation-delay: ${animationDelay}s !important;
@@ -54,6 +53,40 @@ class EnfoldAnimate extends HTMLElement {
         .zoomInRight {
             animation-name: zoomInRight !important;
         }
+        .rotateCenter {
+            -webkit-animation-name: rotateCenter;
+                    animation-name: rotateCenter;
+        }
+        .rotateBotLeft {
+            -webkit-animation-name: rotateBotLeft;
+                    animation-name: rotateBotLeft;
+        }
+        .rotateVertical {
+            -webkit-animation: rotateVertical 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+                    animation: rotateVertical 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        }
+        .rotateDiagonal {
+            -webkit-animation: rotateDiagonal 0.4s linear both;
+                    animation: rotateDiagonal 0.4s linear both;
+        }
+        .flipHorizontalBottom {
+            -webkit-animation: flipHorizontalBottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+                    animation: flipHorizontalBottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        }
+        .flipScaleUpHor {
+            -webkit-animation: flipScaleUpHor 0.5s linear both;
+                    animation: flipScaleUpHor 0.5s linear both;
+        }
+        .slideRotateTopHor {
+            -webkit-animation: slideRotateTopHor 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: slideRotateTopHor 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        .slideRotateHorBottom {
+            -webkit-animation: slideRotateHorBottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: slideRotateHorBottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
         .${animationType}-leave {
             animation-name: ${animationType}-leave !important;
         }
@@ -145,6 +178,105 @@ class EnfoldAnimate extends HTMLElement {
                 transform: translateX(0px) scale(1);
             }
         }
+        @keyframes rotateCenter {
+            0% {
+                -webkit-transform: rotate(0);
+                        transform: rotate(0);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                        transform: rotate(360deg);
+            }
+        }
+        @keyframes rotateBotLeft {
+        0% {
+            -webkit-transform: rotate(0);
+                    transform: rotate(0);
+            -webkit-transform-origin: bottom left;
+                    transform-origin: bottom left;
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+            -webkit-transform-origin: bottom left;
+                    transform-origin: bottom left;
+        }
+        }
+        @keyframes rotateVertical {
+            0% {
+              -webkit-transform: rotateY(0);
+                      transform: rotateY(0);
+            }
+            100% {
+              -webkit-transform: rotateY(360deg);
+                      transform: rotateY(360deg);
+            }
+          }
+          @keyframes rotateDiagonal {
+            0% {
+              -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+                      transform: rotate3d(-1, 1, 0, 0deg);
+              -webkit-transform-origin: 100% 100%;
+                      transform-origin: 100% 100%;
+            }
+            50% {
+              -webkit-transform: rotate3d(-1, 1, 0, -180deg);
+                      transform: rotate3d(-1, 1, 0, -180deg);
+              -webkit-transform-origin: 100% 100%;
+                      transform-origin: 100% 100%;
+            }
+            100% {
+              -webkit-transform: rotate3d(-1, 1, 0, -360deg);
+                      transform: rotate3d(-1, 1, 0, -360deg);
+              -webkit-transform-origin: 100% 100%;
+                      transform-origin: 100% 100%;
+            }
+          }
+          @keyframes flipHorizontalBottom {
+            0% {
+              -webkit-transform: rotateX(0);
+                      transform: rotateX(0);
+            }
+            100% {
+              -webkit-transform: rotateX(-180deg);
+                      transform: rotateX(-180deg);
+            }
+          }
+          @keyframes flipScaleUpHor {
+            0% {
+              -webkit-transform: scale(1) rotateX(0);
+                      transform: scale(1) rotateX(0);
+            }
+            50% {
+              -webkit-transform: scale(2.5) rotateX(-90deg);
+                      transform: scale(2.5) rotateX(-90deg);
+            }
+            100% {
+              -webkit-transform: scale(1) rotateX(-180deg);
+                      transform: scale(1) rotateX(-180deg);
+            }
+          }
+          @keyframes slideRotateTopHor {
+            0% {
+              -webkit-transform: translateY(0) rotateX(0deg);
+                      transform: translateY(0) rotateX(0deg);
+            }
+            100% {
+              -webkit-transform: translateY(-150px) rotateX(-90deg);
+                      transform: translateY(-150px) rotateX(-90deg);
+            }
+          }
+
+          @keyframes slideRotateHorBottom {
+            0% {
+              -webkit-transform: translateY(0) rotateX(0deg);
+                      transform: translateY(0) rotateX(0deg);
+            }
+            100% {
+              -webkit-transform: translateY(150px) rotateX(90deg);
+                      transform: translateY(150px) rotateX(90deg);
+            }
+          }
         </style>
           </style>
           <div id="enfold">
