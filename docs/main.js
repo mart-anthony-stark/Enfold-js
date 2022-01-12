@@ -78,6 +78,15 @@
             -webkit-animation: flipScaleUpHor 0.5s linear both;
                     animation: flipScaleUpHor 0.5s linear both;
         }
+        .slideRotateTopHor {
+            -webkit-animation: slideRotateTopHor 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: slideRotateTopHor 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        .slideRotateHorBottom {
+            -webkit-animation: slideRotateHorBottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: slideRotateHorBottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
 
         .${animationType}-leave {
             animation-name: ${animationType}-leave !important;
@@ -248,6 +257,29 @@
                       transform: scale(1) rotateX(-180deg);
             }
           }
+          @keyframes slideRotateTopHor {
+            0% {
+              -webkit-transform: translateY(0) rotateX(0deg);
+                      transform: translateY(0) rotateX(0deg);
+            }
+            100% {
+              -webkit-transform: translateY(-150px) rotateX(-90deg);
+                      transform: translateY(-150px) rotateX(-90deg);
+            }
+          }
+
+          @keyframes slideRotateHorBottom {
+            0% {
+              -webkit-transform: translateY(0) rotateX(0deg);
+                      transform: translateY(0) rotateX(0deg);
+            }
+            100% {
+              -webkit-transform: translateY(150px) rotateX(90deg);
+                      transform: translateY(150px) rotateX(90deg);
+            }
+          }
+          
+          
           
           
 
