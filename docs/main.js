@@ -99,6 +99,10 @@
             -webkit-animation: shadowDropLR 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
                     animation: shadowDropLR 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         }
+        .shadowDrop2Center {
+            -webkit-animation: shadowDrop2Center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: shadowDrop2Center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
 
         .${animationType}-leave {
             animation-name: ${animationType}-leave !important;
@@ -320,6 +324,21 @@
                       box-shadow: -12px 0 20px -12px rgba(0, 0, 0, 0.85), 12px 0 20px -12px rgba(0, 0, 0, 0.85);
             }
           }
+          @keyframes shadowDrop2Center {
+            0% {
+              -webkit-transform: translateZ(0);
+                      transform: translateZ(0);
+              -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+            100% {
+              -webkit-transform: translateZ(50px);
+                      transform: translateZ(50px);
+              -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+                      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+            }
+          }
+          
           
           
           
