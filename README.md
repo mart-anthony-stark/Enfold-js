@@ -1,6 +1,6 @@
 # Enfold js
 
-### A simple onscroll reveal animation library
+### A simple element reveal animation library
 
 ## Usage
 
