@@ -295,7 +295,6 @@
       this.shadowRoot.appendChild(template.content.cloneNode(true));
 
       const root = this.shadowRoot.querySelector("#enfold");
-      root.style.opacity = 0;
 
       const observer = new IntersectionObserver(callback, {
         threshold,
@@ -314,7 +313,6 @@
           if (once) {
             observer.unobserve(entry.target);
           }
-          root.style.opacity = 1;
         });
       }
     }
