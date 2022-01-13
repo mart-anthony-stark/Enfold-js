@@ -334,8 +334,8 @@
             100% {
               -webkit-transform: translateZ(50px);
                       transform: translateZ(50px);
-              -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-                      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+              -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.85);
+                      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.85);
             }
           }
           
