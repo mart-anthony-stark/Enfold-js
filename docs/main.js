@@ -87,6 +87,18 @@
             -webkit-animation: slideRotateHorBottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
                     animation: slideRotateHorBottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         }
+        .shadowDropCenter {
+            -webkit-animation: shadowDropCenter 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: shadowDropCenter 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+        .shadowDropTB {
+            -webkit-animation: shadowDropTB 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: shadowDropTB 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+        .shadowDropLR {
+            -webkit-animation: shadowDropLR 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: shadowDropLR 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
 
         .${animationType}-leave {
             animation-name: ${animationType}-leave !important;
@@ -278,6 +290,37 @@
                       transform: translateY(150px) rotateX(90deg);
             }
           }
+          @keyframes shadowDropCenter {
+            0% {
+              -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+            100% {
+              -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.85);
+                      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.85);
+            }
+          }
+          @keyframes shadowDropTB {
+            0% {
+              -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+                      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+            100% {
+              -webkit-box-shadow: 0 -12px 20px -12px rgba(0, 0, 0, 0.85), 0 12px 20px -12px rgba(0, 0, 0, 0.85);
+                      box-shadow: 0 -12px 20px -12px rgba(0, 0, 0, 0.85), 0 12px 20px -12px rgba(0, 0, 0, 0.85);
+            }
+          }
+          @keyframes shadowDropLR {
+            0% {
+              -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+                      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+            100% {
+              -webkit-box-shadow: -12px 0 20px -12px rgba(0, 0, 0, 0.85), 12px 0 20px -12px rgba(0, 0, 0, 0.85);
+                      box-shadow: -12px 0 20px -12px rgba(0, 0, 0, 0.85), 12px 0 20px -12px rgba(0, 0, 0, 0.85);
+            }
+          }
+          
           
           
           
