@@ -9,6 +9,8 @@
   <div>...</div>
 </enfold-animate>
 ```
+[Animation Demo](https://mart-anthony-stark.github.io/Enfold-js/)
+
 
 ## Attributes
 
