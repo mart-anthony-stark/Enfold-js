@@ -28,3 +28,27 @@
   - The animation activated when the _threshold_ is crossed into the viewport. A threshold of 1.0 means that when 100% of the target is visible within the element specified by the root option, the callback is invoked. **Default: 0.3**
 - once
   - If the _once_ attribute is present, the animation will be triggered only once the element enters viewport.
+
+# Animation Names
+- fadeRight
+- fadeIn
+- fadeLeft
+- slideRight
+- slideUp
+- slideDown
+- slideLeft
+- zoomInRight
+- zoomIn
+- zoomInLeft
+- rotateCenter
+- rotateDiagonal
+- rotateBotLeft
+- rotateVertical
+- flipHorizontalBottom
+- flipScaleUpHor
+- slideRotateTopHor
+- slideRotateHorBottom
+- shadowDropCenter
+- shadowDropTB
+- shadowDropLR
+- shadowDrop2Center
