@@ -3,18 +3,28 @@
 ### A simple element reveal animation library
 
 ## Usage
-Include the Javascript file to your html document.
+
+Include the external Javascript file to your html document.
+
 ```html
 <script src="./build/enfold.min.js"></script>
 ```
+
+Or you can use this link
+
+```html
+<script src="https://raw.githubusercontent.com/mart-anthony-stark/Enfold-js/main/build/enfold.min.js"></script>
+```
+
 Wrap the element you want to animate when entering the screen.
+
 ```html
 <enfold-animate name="fadeIn">
   <div>...</div>
 </enfold-animate>
 ```
-[Animation Demo](https://mart-anthony-stark.github.io/Enfold-js/)
 
+[Animation Demo](https://mart-anthony-stark.github.io/Enfold-js/)
 
 ## Attributes
 
@@ -36,6 +46,7 @@ Wrap the element you want to animate when entering the screen.
   - If the _once_ attribute is present, the animation will be triggered only once the element enters viewport.
 
 # Animation Names
+
 - fadeRight
 - fadeIn
 - fadeLeft
