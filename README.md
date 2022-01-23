@@ -25,6 +25,7 @@ Wrap the element you want to animate when entering the screen with enfold-animat
 ```
 
 [Animation Demo](https://mart-anthony-stark.github.io/Enfold-js/)
+[Animation Names](https://github.com/mart-anthony-stark/Enfold-js#animation-names)
 
 ## Attributes
 
