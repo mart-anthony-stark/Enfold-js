@@ -13,7 +13,7 @@ Include the external Javascript file to your html document.
 Or you can use this link
 
 ```html
-<script src="https://raw.githubusercontent.com/mart-anthony-stark/Enfold-js/main/build/enfold.min.js"></script>
+<script src="https://mart-anthony-stark.github.io/Enfold-js/src/enfold.min.js"></script>
 ```
 
 Wrap the element you want to animate when entering the screen.
