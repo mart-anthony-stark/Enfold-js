@@ -3,7 +3,12 @@
 ### A simple element reveal animation library
 
 ## Usage
-
+Include the Javascript file to your html document.
+```html
+<script src="./build/enfold.min.js">
+```
+<br/>
+Wrap the element you want to animate when entering the screen.
 ```html
 <enfold-animate name="fadeIn">
   <div>...</div>
