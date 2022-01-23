@@ -74,12 +74,28 @@ Wrap the element you want to animate when entering the screen with enfold-animat
 - shadowDrop2Center
 
 ## Samples
-
+![img](https://github.com/mart-anthony-stark/Enfold-js/blob/main/docs/src/animations/section1.gif?raw=true)
 ```html
 <enfold-animate name="fadeRight" duration="1">
     <div class="box">
         <h1>Section 1</h1>
         <h2>Fade Right</h2>
+    </div>
+</enfold-animate>
+```
+```html
+ <enfold-animate name="fadeIn">
+    <div class="box">
+        <h1>Section 1</h1>
+        <h2>Fade In</h2>
+    </div>
+</enfold-animate>
+```
+```html
+<enfold-animate name="fadeLeft">
+    <div class="box">
+        <h1>Section 1</h1>
+        <h2>Fade Left</h2>
     </div>
 </enfold-animate>
 ```
