@@ -2,6 +2,10 @@
 
 ### A simple element reveal animation library
 
+- [Animation Demo](https://mart-anthony-stark.github.io/Enfold-js/)
+- [Usage](https://github.com/mart-anthony-stark/Enfold-js#usage)
+- [Animation Names](https://github.com/mart-anthony-stark/Enfold-js#animation-names)
+
 ## Usage
 
 Include the external Javascript file to your html document.
@@ -23,9 +27,6 @@ Wrap the element you want to animate when entering the screen with enfold-animat
   <div>...</div>
 </enfold-animate>
 ```
-
-[Animation Demo](https://mart-anthony-stark.github.io/Enfold-js/)
-[Animation Names](https://github.com/mart-anthony-stark/Enfold-js#animation-names)
 
 ## Attributes
 
