@@ -5,9 +5,8 @@
 ## Usage
 Include the Javascript file to your html document.
 ```html
-<script src="./build/enfold.min.js">
+<script src="./build/enfold.min.js"></script>
 ```
-<br/>
 Wrap the element you want to animate when entering the screen.
 ```html
 <enfold-animate name="fadeIn">
