@@ -72,3 +72,14 @@ Wrap the element you want to animate when entering the screen with enfold-animat
 - shadowDropTB
 - shadowDropLR
 - shadowDrop2Center
+
+## Samples
+
+```html
+<enfold-animate name="fadeRight" duration="1">
+    <div class="box">
+        <h1>Section 1</h1>
+        <h2>Fade Right</h2>
+    </div>
+</enfold-animate>
+```
