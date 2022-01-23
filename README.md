@@ -10,13 +10,13 @@ Include the external Javascript file to your html document.
 <script src="./build/enfold.min.js"></script>
 ```
 
-Or you can use this link
+Or you can use this link:
 
 ```html
 <script src="https://mart-anthony-stark.github.io/Enfold-js/src/enfold.min.js"></script>
 ```
 
-Wrap the element you want to animate when entering the screen.
+Wrap the element you want to animate when entering the screen with enfold-animate component.
 
 ```html
 <enfold-animate name="fadeIn">
