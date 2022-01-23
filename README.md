@@ -6,6 +6,7 @@
 - [Usage](https://github.com/mart-anthony-stark/Enfold-js#usage)
 - [Component Attributes](https://github.com/mart-anthony-stark/Enfold-js#attributes)
 - [Animation Names](https://github.com/mart-anthony-stark/Enfold-js#animation-names)
+- [Samples](https://github.com/mart-anthony-stark/Enfold-js#samples)
 
 ## Usage
 
