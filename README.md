@@ -75,7 +75,15 @@ Enfold({
   },
 });
 ```
-- 
+
+- Add 'effect' attribute with the method name as value to the enfold-animate component you want
+
+```html
+<enfold-animate name="slideRight" effect="log">
+  <h1 class="title">Enfold Js</h1>
+</enfold-animate>
+```
+
 # Animation Names
 
 - fadeRight
