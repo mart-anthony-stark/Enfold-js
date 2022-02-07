@@ -60,7 +60,7 @@ Wrap the element you want to animate when entering the screen with enfold-animat
 
 # Side Effects
 
-Side effects are functions that will be trggered once the component is visible to screen and started animating
+Side effects are functions that will be triggered once the component is visible to screen and started animating
 
 - Define your functions in effects option when calling out Enfold method
 
