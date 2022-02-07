@@ -373,8 +373,7 @@ function Enfold(options) {
             !entry.isIntersecting
           );
           if (entry.isIntersecting && sideEffect !== null) {
-            // console.log(sideEffect);
-            options["effects"][sideEffect]();
+            options["effects"][sideEffect](entry);
           }
 
           if (once) {
