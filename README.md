@@ -22,9 +22,10 @@ Or you can use this link:
 <script src="https://mart-anthony-stark.github.io/Enfold-js/src/enfold.min.js"></script>
 ```
 
-call the Enfold method
+call the Enfold method in your script
 
 ```javascript
+// app.js
 Enfold({
   // Options
 });
