@@ -1,7 +1,8 @@
 Enfold({
   effects: {
-    log: () => {
+    log: (entry) => {
       console.log("LOG EFFECT");
+      console.log(entry.target);
     },
   },
 });
