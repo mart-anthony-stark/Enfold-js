@@ -62,7 +62,20 @@ Wrap the element you want to animate when entering the screen with enfold-animat
 
 Side effects are functions that will be trggered once the component is visible to screen and started animating
 
+- Define your functions in effects option when calling out Enfold method
 
+```javascript
+Enfold({
+  effects: {
+    log: (entry) => {
+      // User defined sideEffect function
+      console.log("LOG EFFECT");
+      console.log(entry.target);
+    },
+  },
+});
+```
+- 
 # Animation Names
 
 - fadeRight
