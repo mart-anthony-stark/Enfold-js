@@ -5,6 +5,7 @@
 - [Animation Demo](https://mart-anthony-stark.github.io/Enfold-js/)
 - [Usage](https://github.com/mart-anthony-stark/Enfold-js#usage)
 - [Component Attributes](https://github.com/mart-anthony-stark/Enfold-js#attributes)
+- [Side Effects](https://github.com/mart-anthony-stark/Enfold-js#side-effects)
 - [Animation Names](https://github.com/mart-anthony-stark/Enfold-js#animation-names)
 - [Samples](https://github.com/mart-anthony-stark/Enfold-js#samples)
 
